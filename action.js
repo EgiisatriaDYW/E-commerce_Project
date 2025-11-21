@@ -3,7 +3,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', function () {
-    //  Add To Cart
+    //  Add To Cart 
     attachAddToCartListeners();
     updateCartCount();
 
@@ -90,16 +90,16 @@ document.addEventListener('DOMContentLoaded', function () {
     if (catTrack) {
         // Data kategori
         const categories = [
-            { name: 'Vegetables', count: '125+ Products', img: 'assets/food/Category1.webp' },
-            { name: 'Fish & Meats', count: '90+ Products', img: 'assets/food/Category2.webp' },
-            { name: 'Desserts', count: '80+ Products', img: 'assets/food/Category3.webp' },
-            { name: 'Drinks & Juice', count: '60+ Products', img: 'assets/food/Category4.webp' },
-            { name: 'Animals Food', count: '100+ Products', img: 'assets/food/Category5.webp' },
-            { name: 'Fresh Fruits', count: '70+ Products', img: 'assets/food/Category6.webp' },
-            { name: 'Yummy Candy', count: '50+ Products', img: 'assets/food/Category7.webp' },
-            { name: 'Dairy & Eggs', count: '45+ Products', img: 'assets/food/Category8.webp' },
-            { name: 'Bakery', count: '35+ Products', img: 'assets/food/Category9.webp' },
-            { name: 'Spices & Herbs', count: '65+ Products', img: 'assets/food/Category10.webp' },
+            { name: 'Vegetables', count: '125+ Products', img: 'assets/food/category1.webp' },
+            { name: 'Fish & Meats', count: '90+ Products', img: 'assets/food/category2.webp' },
+            { name: 'Desserts', count: '80+ Products', img: 'assets/food/category3.webp' },
+            { name: 'Drinks & Juice', count: '60+ Products', img: 'assets/food/category4.webp' },
+            { name: 'Animals Food', count: '100+ Products', img: 'assets/food/category5.webp' },
+            { name: 'Fresh Fruits', count: '70+ Products', img: 'assets/food/category6.webp' },
+            { name: 'Yummy Candy', count: '50+ Products', img: 'assets/food/category7.webp' },
+            { name: 'Dairy & Eggs', count: '45+ Products', img: 'assets/food/category8.webp' },
+            { name: 'Bakery', count: '35+ Products', img: 'assets/food/category9.webp' },
+            { name: 'Spices & Herbs', count: '65+ Products', img: 'assets/food/category10.webp' },
         ];
 
         // Buat card
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
             catTrack.appendChild(card.cloneNode(true));
         });
 
-        // Auto-scroll seamless
+        // Auto-scroll seamless 
         let rafId = null;
         let lastTs = null;
         let paused = false;
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
         catWrapper.addEventListener('touchstart', () => (paused = true));
         catWrapper.addEventListener('touchend', () => (paused = false));
 
-        //Tombol Navigasi
+        //Tombol Navigasi 
         if (catLeftBtn && catRightBtn) {
             function scrollStep() {
                 return Math.max(120, Math.round(catWrapper.clientWidth * 0.35));
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    //  Recommended Products
+    //  Recommended Products 
     const recommendedGrid = document.getElementById('recommendedGrid');
     if (recommendedGrid) {
         // Data produk
@@ -449,7 +449,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //     clearInterval(autoScrollInterval);
     // });
 
-    // Hot Deals Carousel
+    // Hot Deals Carousel 
     const hotDealsWrapper = document.getElementById('hotDealsWrapper');
     const hotDealsTrack = document.getElementById('hotDealsTrack');
 
@@ -618,14 +618,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Fungsi untuk update angka di ikon cart
+// Fungsi untuk update angka di ikon cart 
 function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
+    
     const badges = document.querySelectorAll('.cart-badge');
-
-    badges.forEach((badge) => {
+    
+    badges.forEach(badge => {
         badge.textContent = totalItems;
         badge.classList.toggle('hidden', totalItems === 0);
     });
