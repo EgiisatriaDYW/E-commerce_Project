@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Merienda:wght@300..900&display=swap" rel="stylesheet" />
+        <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+        <script src="action.js" defer></script>
+        <link href="output.css" rel="stylesheet" />
+        <title>My Market</title>
+
+        <style>
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+
+            /* Hide scrollbar for IE, Edge and Firefox */
+            .scrollbar-hide {
+                -ms-overflow-style: none; /* IE and Edge */
+                scrollbar-width: none; /* Firefox */
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="header" class="relative">
+            <!--? Top Bar -->
+            <div class="bg-[#299e60] text-white text-sm">
+                <div class="lg:px-30">
+                    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-1">
+                        <div class="flex items-center justify-between py-2">
+                            <!-- Left -->
+                            <div class="flex items-center space-x-2 sm:space-x-4">
+                                <a href="#" class="hover:underline hidden sm:inline">About Us</a>
+                                <span class="hidden sm:inline-block h-4 w-px bg-white/40"></span>
+                                <a href="#" class="hover:underline hidden sm:inline">Free Delivery</a>
+                                <span class="hidden sm:inline-block h-4 w-px bg-white/40"></span>
+                                <a href="#" class="hover:underline hidden sm:inline">Returns Policy</a>
+                                <!-- Mobile: Dropdown untuk top links -->
+                                <div class="sm:hidden">
+                                    <details class="relative">
+                                        <summary class="cursor-pointer text-xs flex items-center">
+                                            Info
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 ml-1">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                            </svg>
+                                        </summary>
+                                        <div class="absolute left-0 mt-1 w-40 bg-white text-gray-700 text-xs rounded-md shadow-lg py-2 z-20">
+                                            <a href="#" class="block px-4 py-1 hover:bg-gray-100">About Us</a>
+                                            <a href="#" class="block px-4 py-1 hover:bg-gray-100">Free Delivery</a>
+                                            <a href="#" class="block px-4 py-1 hover:bg-gray-100">Returns Policy</a>
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+
+                            <!--* Right -->
+                            <div class="flex items-center space-x-2 sm:space-x-4">
+                                <a href="#" class="hover:underline hidden sm:inline">Help Center</a>
+                                <span class="hidden sm:inline-block h-4 w-px bg-white/40"></span>
+                                <a href="#" class="hover:underline hidden sm:inline">My Account</a>
+                                <!-- Mobile: Dropdown untuk akun -->
+                                <div class="sm:hidden">
+                                    <details class="relative">
+                                        <summary class="cursor-pointer text-xs flex items-center">
+                                            Account
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 ml-1">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                            </svg>
+                                        </summary>
+                                        <div class="absolute right-0 mt-1 w-40 bg-white text-gray-700 text-xs rounded-md shadow-lg py-2 z-20">
+                                            <a href="#" class="block px-4 py-1 hover:bg-gray-100">Help Center</a>
+                                            <a href="#" class="block px-4 py-1 hover:bg-gray-100">My Account</a>
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--? HEADER MAIN -->
+            <div class="bg-[#e9f9ef]">
+                <div class="lg:px-30">
+                    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-5">
+                        <div class="flex items-center justify-between gap-4">
+                            <!--* Logo -->
+                            <div class="text-2xl md:text-3xl font-bold cursor-pointer hover:scale-110" style="font-family: 'Merienda', cursive">
+                                <span class="text-black font-serif">My</span>
+                                <span class="text-emerald-600 font-serif">Market</span>
+                            </div>
+
+                            <!--* Search Bar -->
+                            <div class="flex-1 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl">
+                                <input type="text" placeholder="Search for a product or brand" class="w-full border border-gray-300 rounded-lg py-2 px-4 focus:outline-none" />
+                            </div>
+
+                            <!--* Mobile: Search Icon -->
+                            <div class="md:hidden flex items-center space-x-4">
+                                <button class="p-2 rounded-full bg-white shadow-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-700">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!--* Location & Icons -->
+                            <div class="hidden md:flex items-center space-x-4">
+                                <!-- Location Button -->
+                                <div class="flex items-center border border-gray-300 rounded-lg px-3 py-1.5 text-sm cursor-pointer hover:scale-120">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo" viewBox="0 0 16 16">
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.3 1.3 0 0 0-.37.265.3.3 0 0 0-.057.09V14l.002.008.016.033a.6.6 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.6.6 0 0 0 .146-.15l.015-.033L12 14v-.004a.3.3 0 0 0-.057-.09 1.3 1.3 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465s-2.462-.172-3.34-.465c-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411"
+                                        />
+                                    </svg>
+                                    <span class="ml-1 text-emerald-700">New York</span>
+                                </div>
+
+                                <!--* Icons -->
+                                <div class="flex items-center space-x-4">
+                                    <!-- Wishlist -->
+                                    <div class="relative hover:scale-120 cursor-pointer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-700">
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733C11.285 4.876 9.623 3.75 7.688 3.75 5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                            />
+                                        </svg>
+                                        <span class="absolute -top-1 -right-1 bg-emerald-600 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">1</span>
+                                    </div>
+
+                                    <!--* Cart -->
+                                    <div class="relative hover:scale-120 cursor-pointer">
+                                        <a href="cart.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-700">
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                                />
+                                            </svg>
+                                            <span class="cart-badge absolute -top-1 -right-1 bg-emerald-600 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">1</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--! Mobile: Menu Icon -->
+                            <div class="md:hidden flex items-center">
+                                <button id="mobileMenuButton" class="p-2 rounded-full bg-white shadow-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-700">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <!--! Mobile: Dropdown Menu -->
+                            <nav id="mobileMenu" class="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 py-4 z-30 hidden">
+                                <div class="px-4 space-y-2">
+                                    <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 rounded-md">Home</a>
+                                    <a href="product.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 rounded-md">Shop</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 rounded-md">Pages</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 rounded-md">Contact Us</a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--? NAVIGATION MENU BAR -->
+            <div class="bg-white border-t border-gray-200">
+                <div class="lg:px-30">
+                    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+                        <div class="flex items-center justify-between py-3">
+                            <!--* Left: Navigation Menu -->
+                            <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-gray-700">
+                                <a href="#" class="hover:text-emerald-600 transition-colors font-extrabold text-green-600">Home</a>
+                                <div class="relative group">
+                                    <button class="flex items-center gap-1 hover:text-emerald-600 transition-colors">
+                                        Shop
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <!--* Dropdown content -->
+                                    <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                        <a href="product.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50">All Products</a>
+                                        <a href="#shop-by-category" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50">Categories</a>
+                                        <a href="#hot-deals" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50">Hot Deals</a>
+                                    </div>
+                                </div>
+                                <div class="relative group">
+                                    <button class="flex items-center gap-1 hover:text-emerald-600 transition-colors">
+                                        Pages
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <!--* Dropdown content -->
+                                    <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50">About</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50">Contact</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50">FAQ</a>
+                                    </div>
+                                </div>
+                                <div class="relative group">
+                                    <!--* Dropdown content -->
+                                    <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50">Latest Posts</a>
+                                        <a href="#shop-by-category" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50">Categories</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="hover:text-emerald-600 transition-colors">Contact Us</a>
+                            </nav>
+
+                            <!--* Right: Phone Number Box -->
+                            <div class="hidden md:flex items-center bg-emerald-600 text-white px-4 sm:px-6 py-1.5 rounded-md text-sm hover:scale-110 cursor-pointer">
+                                <div class="mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                                        <path
+                                            d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
+                                        />
+                                    </svg>
+                                </div>
+                                <span class="font-semibold">01-234 567 890</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sticky Header -->
+        <section>
+            <div id="stickyHeader" class="fixed top-0 lg:px-40 left-0 right-0 z-50 bg-white border-b border-gray-200 py-2 px-4 max-w-7xl mx-auto hidden transition-all duration-300">
+                <div class="flex items-center justify-between">
+                    <!-- === KIRI: Logo + Nav Menu === -->
+                    <div class="flex items-center space-x-5">
+                        <!-- Logo -->
+                        <div class="text-xl font-bold" style="font-family: 'Merienda', cursive">
+                            <a href="#header">
+                                <span class="text-black font-serif">My</span>
+                                <span class="text-emerald-600 font-serif">Market</span>
+                            </a>
+                        </div>
+
+                        <!-- Menu Navigasi: Desktop & Tablet -->
+                        <nav class="hidden lg:flex items-center space-x-3 text-sm font-medium">
+                            <a href="index.html" class="text-emerald-600 font-bold hover:text-emerald-700">Home</a>
+
+                            <!-- Dropdown Shop -->
+                            <div class="relative group">
+                                <button class="flex items-center gap-1 text-gray-700 hover:text-emerald-600">
+                                    Shop
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3.5 h-3.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <div class="absolute left-0 mt-1 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                    <a href="product.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50">All Products</a>
+                                    <a href="#shop-by-category" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50">Categories</a>
+                                    <a href="#hot-deals" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50">Hot Deals</a>
+                                </div>
+                            </div>
+
+                            <a href="#" class="text-gray-700 hover:text-emerald-600">About</a>
+                            <a href="#" class="text-gray-700 hover:text-emerald-600">Contact</a>
+                        </nav>
+                    </div>
+
+                    <!-- === KANAN: Search + WA + Cart + Mobile Menu === -->
+                    <div class="flex items-center space-x-4">
+                        <!-- Search Bar (tablet ke atas) -->
+                        <div class="hidden md:flex max-w-xs">
+                            <input type="text" placeholder="Search..." class="w-full border border-gray-300 rounded-lg py-1 px-3 text-sm focus:outline-none focus:ring-1 focus:ring-emerald-500" />
+                        </div>
+
+                        <!-- WhatsApp Contact (tablet ke atas) -->
+                        <a href="https://wa.me/1234567890" class="hidden md:flex items-center bg-emerald-600 text-white px-3 py-1 rounded-md text-xs hover:bg-emerald-700">
+                            <div class="pr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                                    <path
+                                        d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
+                                    />
+                                </svg>
+                            </div>
+                            01-234 567 890
+                        </a>
+
+                        <!-- Ikon Search (mobile only) -->
+                        <button class="md:hidden p-1.5 rounded-full hover:bg-gray-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-700">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                            </svg>
+                        </button>
+
+                        <!-- Cart Icon -->
+                        <a href="cart.html" class="relative">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-700">
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                />
+                            </svg>
+                                            <span class="cart-badge absolute -top-1 -right-1 bg-emerald-600 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">1</span>
+                        </a>
+
+                        <!-- Mobile Menu Button -->
+                        <button id="stickyMobileMenuButton" class="lg:hidden p-1.5 rounded-full hover:bg-gray-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-700">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu (Drawer) -->
+                <nav id="stickyMobileMenu" class="lg:hidden mt-3 hidden">
+                    <div class="space-y-2 pb-2">
+                        <a href="index.html" class="block px-4 py-2 text-sm  hover:bg-emerald-50 rounded-md font-bold text-emerald-600">Home</a>
+                        <a href="product.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 rounded-md">Shop</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 rounded-md">About</a>
+                        <a href="https://wa.me/1234567890" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 rounded-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp mr-2" viewBox="0 0 16 16">
+                                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326z" />
+                            </svg>
+                            Contact Us
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+        <!--? HERO CAROUSEL SECTION -->
+        <section class="py-8 px-6 md:py-10 md:px-12 lg:px-40 mb-10">
+            <div class="hero-section relative bg-[#dcedd4] rounded-2xl overflow-hidden px-3">
+                <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                    <!--* Left Content -->
+                    <div class="lg:w-1/2 space-y-6 px-10 py-5 flex flex-col items-center lg:items-start text-center lg:text-left">
+                        <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight" style="font-family: 'Merienda', cursive">Daily Grocery Order and Get Express Delivery</h1>
+
+                        <p class="text-gray-700 text-sm md:text-base leading-relaxed max-w-lg">
+                            Order your daily groceries online and enjoy express delivery straight to your doorstep. Fresh produce, essentials, and more—fast, convenient, and reliable service for your everyday needs.
+                        </p>
+
+                        <div class="flex justify-center lg:justify-start w-full">
+                            <a href="product.html" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-6 rounded-full transition-colors">
+                                Shop Now
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--* Right Image -->
+                    <div class="lg:w-1/2 relative">
+                        <img src="assets/hero/hero1.webp" alt="Fresh Groceries Delivery" class="rounded-xl shadow-lg max-w-sm h-auto object-cover hover:scale-110 cursor-pointer" />
+                    </div>
+                </div>
+
+                <!--* Navigation Arrows -->
+                <button id="hero-prev" class="cursor-pointer absolute left-2 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 text-gray-700 p-3 rounded-full shadow-md transition-colors z-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+                <button id="hero-next" class="cursor-pointer absolute right-2 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 text-gray-700 p-3 rounded-full shadow-md transition-colors z-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!--? CATEGORY CAROUSEL SECTION -->
+        <section id="shop-by-category" class="mt-0 py-3 px-4 md:px-8 lg:px-40">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6" style="font-family: 'Merienda', cursive">Shop by Category</h2>
+
+            <div class="max-w-7xl mx-auto">
+                <!--* Wrapper Overflow -->
+                <div id="catWrapper" class="overflow-hidden relative">
+                    <div id="catTrack" class="flex items-center gap-3 whitespace-nowrap"></div>
+                </div>
+            </div>
+        </section>
+
+        <!--? BANNER SECTION -->
+        <section class="py-10 px-4 md:px-8 lg:px-40">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-800 mb-6" style="font-family: 'Merienda', cursive">Special Offers</h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!--* Banner 1 -->
+                    <div class="relative rounded-xl overflow-hidden group">
+                        <img src="assets/banner/promotional-banner-img1.webp" alt="Everyday Fresh Meat" class="w-full h-48 object-cover" />
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2">
+                                Everyday
+                                <br />
+                                Fresh Meat
+                            </h3>
+                            <a href="product.html" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-full transition-colors">
+                                Shop Now
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--* Banner 2 -->
+                    <div class="relative rounded-xl overflow-hidden group">
+                        <img src="assets/banner/promotional-banner-img2.webp" alt="Daily Fresh Vegetables" class="w-full h-48 object-cover" />
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2">
+                                Daily Fresh
+                                <br />
+                                Vegetables
+                            </h3>
+                            <a href="product.html" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-full transition-colors">
+                                Shop Now
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--* Banner 3 -->
+                    <div class="relative rounded-xl overflow-hidden group">
+                        <img src="assets/banner/promotional-banner-img3.webp" alt="Everyday Fresh Milk" class="w-full h-48 object-cover" />
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2">
+                                Everyday
+                                <br />
+                                fresh Milk
+                            </h3>
+                            <a href="product.html" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-full transition-colors">
+                                Shop Now
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--* Banner 4 -->
+                    <div class="relative rounded-xl overflow-hidden group">
+                        <img src="assets/banner/promotional-banner-img4.webp" alt="Everyday Fresh Fruits" class="w-full h-48 object-cover" />
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2">
+                                Everyday
+                                <br />
+                                Fresh Fruits
+                            </h3>
+                            <a href="product.html" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-full transition-colors">
+                                Shop Now
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--? TODAY'S BEST DEALS SECTION -->
+        <section class="py-10 px-4 md:px-8 lg:px-40">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl md:text-4xl font-bold text-gray-800 mb-6" style="font-family: 'Merienda', cursive">Today's Best Deals</h2>
+
+                <!--* Wrapper Overflow -->
+                <div id="dealsWrapper" class="overflow-hidden relative">
+                    <!--Todo: Track-->
+                    <div id="dealsTrack" class="flex items-start gap-6 whitespace-nowrap">
+                        <!--* Card 1 -->
+                        <div id="card2" class="shrink-0 w-full sm:w-full md:w-[calc(50%-12px)] lg:w-[calc(50%-18px)] rounded-xl overflow-hidden bg-[#abf4ee] shadow-sm">
+                            <div class="flex flex-col lg:flex-row h-full">
+                                <!-- Image Section (Left) -->
+                                <div class="w-full lg:w-[55%] h-32 lg:h-full lg:mt-8 overflow-hidden flex justify-center items-center">
+                                    <img src="assets/best-deals/Deals-img2.webp" alt="Fresh Vegetables" class="w-full h-full object-cover" />
+                                </div>
+
+                                <!-- Text Section (Right) -->
+                                <div class="w-full lg:w-1/2 p-5 flex flex-col justify-center">
+                                    <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">Fresh Vegetables</h3>
+                                    <p class="text-sm md:text-base text-gray-600 mb-4 break-fill whitespace-pre-line">Shop fresh, healthy vegetables delivered daily. Taste the garden in every bite!</p>
+                                    <a href="product.html" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-full transition-colors self-start">
+                                        Shop Now
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--* Card 2 -->
+                        <div id="card2" class="shrink-0 w-full sm:w-full md:w-[calc(50%-12px)] lg:w-[calc(50%-18px)] rounded-xl overflow-hidden bg-[#e9f9ef] shadow-sm">
+                            <div class="flex flex-col lg:flex-row h-full">
+                                <!-- Image Section (Left) -->
+                                <div class="w-full lg:w-[55%] h-32 lg:h-full lg:mt-8 overflow-hidden flex justify-center items-center">
+                                    <img src="assets/best-deals/Deals-img2.webp" alt="Fresh Vegetables" class="w-full h-full object-cover" />
+                                </div>
+
+                                <!-- Text Section (Right) -->
+                                <div class="w-full lg:w-1/2 p-5 flex flex-col justify-center">
+                                    <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">Fresh Vegetables</h3>
+                                    <p class="text-sm md:text-base text-gray-600 mb-4 break-fill whitespace-pre-line">Shop fresh, healthy vegetables delivered daily. Taste the garden in every bite!</p>
+                                    <a href="product.html" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-full transition-colors self-start">
+                                        Shop Now
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--* Card 3 -->
+                        <div id="card3" class="shrink-0 w-full sm:w-full md:w-[calc(50%-12px)] lg:w-[calc(50%-18px)] rounded-xl overflow-hidden bg-[#e3d5f0] shadow-sm">
+                            <div class="flex flex-col lg:flex-row h-full">
+                                <!-- Image Section (Left) -->
+                                <div class="w-full lg:w-[55%] h-32 lg:h-full lg:mt-8 overflow-hidden flex justify-center items-center">
+                                    <img src="assets/best-deals/Deals-img1.webp" alt="Fresh Vegetables" class="w-full h-full object-cover" />
+                                </div>
+
+                                <!-- Text Section (Right) -->
+                                <div class="w-full lg:w-1/2 p-5 flex flex-col justify-center">
+                                    <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">Fresh Vegetables</h3>
+                                    <p class="text-sm md:text-base text-gray-600 mb-4 break-fill whitespace-pre-line">Shop fresh, healthy vegetables delivered daily. Taste the garden in every bite!</p>
+                                    <a href="product.html" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-full transition-colors self-start">
+                                        Shop Now
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--* Card 4 -->
+                        <div id="card4" class="shrink-0 w-full sm:w-full md:w-[calc(50%-12px)] lg:w-[calc(50%-18px)] rounded-xl overflow-hidden bg-[#fff8d6] shadow-sm">
+                            <div class="flex flex-col lg:flex-row h-full">
+                                <!-- Image Section (Left) -->
+                                <div class="w-full lg:w-[55%] h-32 lg:h-full lg:mt-8 overflow-hidden flex justify-center items-center">
+                                    <img src="assets/best-deals/Deals-img2.webp" alt="Fresh Vegetables" class="w-full h-full object-cover" />
+                                </div>
+
+                                <!-- Text Section (Right) -->
+                                <div class="w-full lg:w-1/2 p-5 flex flex-col justify-center">
+                                    <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">Fresh Vegetables</h3>
+                                    <p class="text-sm md:text-base text-gray-600 mb-4 break-fill whitespace-pre-line">Shop fresh, healthy vegetables delivered daily. Taste the garden in every bite!</p>
+                                    <a href="product.html" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-full transition-colors self-start">
+                                        Shop Now
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--? PRODUCT GRID SECTION -->
+        <section class="py-10 px-4 md:px-8 lg:px-40">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6" style="font-family: 'Merienda', cursive">Top Rated Products</h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <!--* Product 1 -->
+                    <div class="relative rounded-xl overflow-hidden bg-white shadow-sm border border-gray-100 group">
+                        <div class="relative h-48 overflow-hidden flex justify-center items-center p-4">
+                            <img src="assets/product/product-img1.webp" alt="Fresh Eggplant & Cucumber Mix" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-120" />
+
+                            <div class="absolute hover:bg-green-500 cursor-pointer top-2 right-2 bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                                Add
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                    />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="p-4 pt-2">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-gray-400 line-through">$28.99</span>
+                                <span class="text-lg font-bold text-gray-800">$14.99</span>
+                                <span class="text-gray-500 text-sm">/Qty</span>
+                            </div>
+                            <div class="flex items-center text-yellow-500 text-sm mb-1">
+                                <div class="text-xl">&starf;</div>
+                                (17k)
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-green-600 cursor-pointer" style="font-family: 'sans-serif'">Fresh Eggplant & Cucumber</h3>
+                            <div class="flex items-center text-gray-500 text-sm mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop mr-2" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"
+                                    />
+                                </svg>
+                                <div class="text-[11px] font-medium">
+                                    <span>By Lucky Supermarket</span>
+                                </div>
+                            </div>
+                            <div class="text-gray-500 text-lg font-medium">Sold: 18/35</div>
+                        </div>
+                    </div>
+
+                    <!--* Product 2 -->
+                    <div class="relative rounded-xl overflow-hidden bg-white shadow-sm border border-gray-100 group">
+                        <div class="relative h-48 overflow-hidden flex justify-center items-center p-4">
+                            <img src="assets/product/product-img2.webp" alt="Organic Beets with Greens" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-120" />
+                            <div class="absolute hover:bg-green-500 cursor-pointer top-2 right-2 bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                                Add
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                    />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="p-4 pt-2">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-gray-400 line-through">$22.99</span>
+                                <span class="text-lg font-bold text-gray-800">$12.99</span>
+                                <span class="text-gray-500 text-sm">/Qty</span>
+                            </div>
+                            <div class="flex items-center text-yellow-500 text-sm mb-1">
+                                <div class="text-xl">&starf;</div>
+                                (12k)
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2 hover:text-green-600 cursor-pointer" style="font-family: 'sans-serif'">Organic Beets with Greens</h3>
+                            <div class="flex items-center text-gray-500 text-sm mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop mr-2" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"
+                                    />
+                                </svg>
+                                <div class="text-[11px] font-medium">
+                                    <span>By Lucky Supermarket</span>
+                                </div>
+                            </div>
+                            <div class="text-gray-500 text-lg font-medium">Sold: 22/40</div>
+                        </div>
+                    </div>
+
+                    <!--* Product 3 -->
+                    <div class="relative rounded-xl overflow-hidden bg-white shadow-sm border border-gray-100 group">
+                        <div class="relative h-48 overflow-hidden flex justify-center items-center p-4">
+                            <img src="assets/product/product-img3.webp" alt="Mixed Fresh Vegetables Pack" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-120" />
+                            <div class="absolute hover:bg-green-500 cursor-pointer top-2 right-2 bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                                Add
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                    />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="p-4 pt-2">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-gray-400 line-through">$25.99</span>
+                                <span class="text-lg font-bold text-gray-800">$13.99</span>
+                                <span class="text-gray-500 text-sm">/Qty</span>
+                            </div>
+                            <div class="flex items-center text-yellow-500 text-sm mb-1">
+                                <div class="text-xl">&starf;</div>
+                                (8k)
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2 hover:text-green-600 cursor-pointer" style="font-family: 'sans-serif'">Mixed Fresh Vegetables</h3>
+                            <div class="flex items-center text-gray-500 text-sm mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop mr-2" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"
+                                    />
+                                </svg>
+                                <div class="text-[11px] font-medium">
+                                    <span>By Lucky Supermarket</span>
+                                </div>
+                            </div>
+                            <div class="text-gray-500 text-lg font-medium">Sold: 15/25</div>
+                        </div>
+                    </div>
+
+                    <!--* Product 4 -->
+                    <div class="relative rounded-xl overflow-hidden bg-white shadow-sm border border-gray-100 group">
+                        <div class="relative h-48 overflow-hidden flex justify-center items-center p-4">
+                            <img src="assets/product/product-img5.webp" alt="Sun-Maid Raisins" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-120" />
+                            <div class="absolute hover:bg-green-500 cursor-pointer top-2 right-2 bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                                Add
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                    />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="p-4 pt-2">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-gray-400 line-through">$32.99</span>
+                                <span class="text-lg font-bold text-gray-800">$16.99</span>
+                                <span class="text-gray-500 text-sm">/Qty</span>
+                            </div>
+                            <div class="flex items-center text-yellow-500 text-sm mb-1">
+                                <div class="text-xl">&starf;</div>
+                                (5k)
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2 hover:text-green-600 cursor-pointer" style="font-family: 'sans-serif'">Sun-Maid Raisins</h3>
+                            <div class="flex items-center text-gray-500 text-sm mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop mr-2" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"
+                                    />
+                                </svg>
+                                <div class="text-[11px] font-medium">
+                                    <span>By Lucky Supermarket</span>
+                                </div>
+                            </div>
+                            <div class="text-gray-500 text-lg font-medium">Sold: 8/15</div>
+                        </div>
+                    </div>
+
+                    <!--* Product 5 -->
+                    <div class="relative rounded-xl overflow-hidden bg-white shadow-sm border border-gray-100 group">
+                        <div class="relative h-48 overflow-hidden flex justify-center items-center p-4">
+                            <img src="assets/product/product-img4.webp" alt="Doritos Spicy Sweet Chili" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-120" />
+                            <div class="absolute hover:bg-green-500 cursor-pointer top-2 right-2 bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                                Add
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                    />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="p-4 pt-2">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-gray-400 line-through">$38.99</span>
+                                <span class="text-lg font-bold text-gray-800">$28.99</span>
+                                <span class="text-gray-500 text-sm">/Qty</span>
+                            </div>
+                            <div class="flex items-center text-yellow-500 text-sm mb-1">
+                                <div class="text-xl">&starf;</div>
+                                (11k)
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2 hover:text-green-600 cursor-pointer" style="font-family: 'sans-serif'">Doritos Spicy Sweet Chili</h3>
+                            <div class="flex items-center text-gray-500 text-sm mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop mr-2" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"
+                                    />
+                                </svg>
+                                <div class="text-[11px] font-medium">
+                                    <span>By Lucky Supermarket</span>
+                                </div>
+                            </div>
+                            <div class="text-gray-500 text-lg font-medium">Sold: 20/30</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--? OFFER SECTION -->
+        <section class="py-10 px-4 md:px-8 lg:px-40">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl md:text-4xl font-bold text-gray-800 mb-6" style="font-family: 'Merienda', cursive">Special Offers</h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!--* Offer 1 -->
+                    <div class="relative rounded-xl overflow-hidden bg-[#299e60] shadow-sm group">
+                        <div class="flex flex-col lg:flex-row h-full">
+                            <!-- Image Section (Left) -->
+                            <div class="w-full lg:w-[40%] h-48 lg:h-full overflow-hidden flex justify-center items-center p-4">
+                                <img src="assets/offer/offer-img1.webp" alt="$5 off your first order" class="max-h-full max-w-full object-contain" />
+                            </div>
+
+                            <!-- Text Section (Right) -->
+                            <div class="w-full lg:w-3/5 p-6 flex flex-col justify-center text-white">
+                                <h3 class="text-2xl md:text-3xl font-bold mb-2">
+                                    $5 off your
+                                    <br />
+                                    first order
+                                </h3>
+                                <div class="mb-4">
+                                    <span class="lg:text-sm md:text-base">
+                                        Delivery by 6:15am
+                                        <span class="text-yellow-200 text-sm font-bold">expired Aug, 5</span>
+                                    </span>
+                                </div>
+                                <a href="product.html" class="inline-flex items-center gap-2 bg-black hover:bg-gray-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 hover:scale-105 self-start">
+                                    Shop Now
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--* Offer 2 -->
+                    <div class="relative rounded-xl overflow-hidden bg-[#299e60] shadow-sm group">
+                        <div class="flex flex-col lg:flex-row h-full">
+                            <!-- Image Section (Left) -->
+                            <div class="w-full lg:w-[40%] h-48 lg:h-full overflow-hidden flex justify-center items-center p-4">
+                                <img src="assets/offer/offer-img2.webp" alt="$5 off your first order" class="max-h-full max-w-full object-contain" />
+                            </div>
+
+                            <!-- Text Section (Right) -->
+                            <div class="w-full lg:w-3/5 p-6 flex flex-col justify-center text-white">
+                                <h3 class="text-2xl md:text-3xl font-bold mb-2">
+                                    $5 off your
+                                    <br />
+                                    first order
+                                </h3>
+                                <div class="mb-4">
+                                    <span class="lg:text-sm md:text-base">
+                                        Delivery by 6:15am
+                                        <span class="text-yellow-200 text-sm font-bold">expired Aug, 5</span>
+                                    </span>
+                                </div>
+                                <a href="product.html" class="inline-flex items-center gap-2 bg-black hover:bg-gray-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 hover:scale-105 self-start">
+                                    Shop Now
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--? RECOMMENDED SECTION CAMPUR JS-->
+        <section class="py-10 px-4 md:px-8 lg:px-40">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6" style="font-family: 'Merienda', cursive">Recommended for you</h2>
+
+                <!--* Wrapper Grid -->
+                <div id="recommendedGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+            </div>
+        </section>
+
+        <!--? TODAY'S HOT DEALS SECTION -->
+        <section id="hot-deals" class="py-10 px-4 md:px-8 lg:px-40">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6" style="font-family: 'Merienda', cursive">Today's Hot Deals</h2>
+
+                <!-- Wrapper Flex -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!--* Left Card -->
+                    <div class="rounded-xl overflow-hidden bg-[#299e60] p-3 flex flex-col justify-center lg:h-[435px]">
+                        <img src="assets/hot-deals/hot-deals-img.webp" class="w-full max-w-[200px] mx-auto" />
+                        <span class="text-white text-2xl font-semibold text-center mt-4" style="font-family: 'Merienda', cursive">Fresh Vegetables</span>
+                        <p class="text-white text-center text-sm mt-2">Get the freshest vegetables delivered to your doorstep. Healthy, organic, and full of flavor!</p>
+                        <button class="mt-6 bg-white text-green-600 px-6 py-3 rounded-xl mx-auto flex items-center gap-2 hover:bg-green-300 hover:text-amber-300 font-bold hover:scale-110 cursor-pointer">Shop Now</button>
+                    </div>
+
+                    <!--* Right Cards -->
+                    <div class="lg:col-span-2">
+                        <!-- Wrapper Overflow -->
+                        <div id="hotDealsWrapper" class="overflow-hidden relative">
+                            <!-- Track -->
+                            <div id="hotDealsTrack" class="flex items-start gap-6 whitespace-nowrap">
+                                <!--* Card 1 -->
+                                <div class="shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[250px] rounded-xl overflow-hidden bg-white shadow-sm border border-gray-100 group">
+                                    <div class="relative h-48 overflow-hidden flex justify-center items-center p-4">
+                                        <img src="assets/hot-deals/product-img2.webp" alt="Tropicana 100% Juice, Orange, No Pulp" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+                                        <!-- Wishlist Icon -->
+                                        <div class="absolute top-2 left-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-emerald-600">
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733C11.285 4.876 9.623 3.75 7.688 3.75 5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <!-- Badge -->
+                                        <div class="absolute top-2 right-2 bg-yellow-500 text-white text-xs px-2 py-1 rounded-full">New</div>
+                                    </div>
+                                    <div class="p-4 pt-2">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-gray-400 line-through">$28.99</span>
+                                            <span class="text-lg font-bold text-gray-800">$14.99</span>
+                                            <span class="text-gray-500 text-sm">/Qty</span>
+                                        </div>
+                                        <div class="flex items-center text-yellow-500 text-sm mb-1">
+                                            <div class="text-xl">&starf;</div>
+                                            (17k)
+                                        </div>
+
+                                        <p class="text-md font-bold text-gray-800 mb-2">
+                                            O Organics Milk, Whole,
+                                            <br />
+                                            Vitamin D
+                                        </p>
+
+                                        <div class="flex items-center text-gray-500 text-sm mb-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop mr-2" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"
+                                                />
+                                            </svg>
+                                            By Lucky Supermarket
+                                        </div>
+                                        <div class="text-gray-500 text-sm mb-4">Sold: 18/35</div>
+                                        <button class="w-full bg-emerald-100 text-emerald-800 font-medium py-2 px-4 rounded-md transition-colors flex items-center justify-center hover:bg-green-400 hover:scale-110 cursor-pointer">
+                                            Add To Cart
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!--* Card 2 -->
+                                <div
+                                    class="shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[250px] rounded-xl overflow-hidden bg-white shadow-sm border border-gray-100 group product-card"
+                                    data-id="hot-2"
+                                    data-title="Marcel’s Modern Pantry Almond Unsweetened"
+                                    data-price="$15.99"
+                                    data-price-numeric="15.99"
+                                    data-image="assets/hot-deals/product-img3.webp"
+                                >
+                                    <div class="relative h-48 overflow-hidden flex justify-center items-center p-4">
+                                        <img src="assets/hot-deals/product-img3.webp" alt="Marcel’s Modern Pantry Almond Unsweetened" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+                                        <!-- Wishlist Icon -->
+                                        <div class="absolute top-2 left-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-emerald-600">
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733C11.285 4.876 9.623 3.75 7.688 3.75 5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <!-- Badge -->
+                                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">35%</div>
+                                    </div>
+                                    <div class="p-4 pt-2">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-gray-400 line-through">$28.99</span>
+                                            <span class="text-lg font-bold text-gray-800">$15.99</span>
+                                            <span class="text-gray-500 text-sm">/Qty</span>
+                                        </div>
+                                        <div class="flex items-center text-yellow-500 text-sm mb-1">
+                                            <div class="text-xl">&starf;</div>
+                                            (17k)
+                                        </div>
+                                        <h3 class="text-md font-bold text-gray-800 mb-2">
+                                            Marcel’s Modern Pantry
+                                            <br />
+                                            Almond Unsweetened
+                                        </h3>
+                                        <div class="flex items-center text-gray-500 text-sm mb-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop mr-2" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"
+                                                />
+                                            </svg>
+                                            By Lucky Supermarket
+                                        </div>
+                                        <div class="text-gray-500 text-sm mb-4">Sold: 22/40</div>
+                                        <button class="w-full bg-emerald-100 text-emerald-800 font-medium py-2 px-4 rounded-md transition-colors flex items-center justify-center hover:bg-green-400 hover:scale-110 cursor-pointer">
+                                            Add To Cart
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!--* Card 3 -->
+                                <div
+                                    class="shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[250px] rounded-xl overflow-hidden bg-white shadow-sm border border-gray-100 group product-card"
+                                    data-id="hot-3"
+                                    data-title="Tropicana 100% Juice, Orange, No Pulp"
+                                    data-price="$18.99"
+                                    data-price-numeric="18.99"
+                                    data-image="assets/hot-deals/product-img4.webp"
+                                >
+                                    <div class="relative h-48 overflow-hidden flex justify-center items-center p-4">
+                                        <img src="assets/hot-deals/product-img4.webp" alt="O Organics Milk, Whole, Vitamin D" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+                                        <!-- Wishlist Icon -->
+                                        <div class="absolute top-2 left-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-emerald-600">
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733C11.285 4.876 9.623 3.75 7.688 3.75 5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <!-- Badge -->
+                                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">30%</div>
+                                    </div>
+                                    <div class="p-4 pt-2">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-gray-400 line-through">$20.99</span>
+                                            <span class="text-lg font-bold text-gray-800">$18.99</span>
+                                            <span class="text-gray-500 text-sm">/Qty</span>
+                                        </div>
+                                        <div class="flex items-center text-yellow-500 text-sm mb-1">
+                                            <div class="text-xl">&starf;</div>
+                                            (17k)
+                                        </div>
+                                        <h3 class="text-md font-bold text-gray-800 mb-2">
+                                            Tropicana 100% Juice,
+                                            <br />
+                                            Orange, No Pulp
+                                        </h3>
+                                        <div class="flex items-center text-gray-500 text-sm mb-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop mr-2" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"
+                                                />
+                                            </svg>
+                                            By Lucky Supermarket
+                                        </div>
+                                        <div class="text-gray-500 text-sm mb-4">Sold: 20/32</div>
+                                        <button class="w-full bg-emerald-100 text-emerald-800 font-medium py-2 px-4 rounded-md transition-colors flex items-center justify-center hover:bg-green-400 hover:scale-110 cursor-pointer">
+                                            Add To Cart
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!--* Card 4 -->
+                                <div
+                                    class="shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[250px] rounded-xl overflow-hidden bg-white shadow-sm border border-gray-100 group product-card"
+                                    data-id="hot-4"
+                                    data-title="Sun-Maid Raisins with almond and no sugar"
+                                    data-price="$16.99"
+                                    data-price-numeric="16.99"
+                                    data-image="assets/hot-deals/product-img5.webp"
+                                >
+                                    <div class="relative h-48 overflow-hidden flex justify-center items-center p-4">
+                                        <img src="assets/hot-deals/product-img5.webp" alt="Sun-Maid Raisins" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+                                        <!-- Wishlist Icon -->
+                                        <div class="absolute top-2 left-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-emerald-600">
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733C11.285 4.876 9.623 3.75 7.688 3.75 5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <!-- badge -->
+                                        <div class="absolute top-2 right-2 bg-yellow-500 text-white text-xs px-2 py-1 rounded-full">New</div>
+                                    </div>
+                                    <div class="p-4 pt-2">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-gray-400 line-through">$32.99</span>
+                                            <span class="text-lg font-bold text-gray-800">$16.99</span>
+                                            <span class="text-gray-500 text-sm">/Qty</span>
+                                        </div>
+                                        <div class="flex items-center text-yellow-500 text-sm mb-1">
+                                            <div class="text-xl">&starf;</div>
+                                            (5k)
+                                        </div>
+                                        <h3 class="text-md font-bold text-gray-800 mb-2">
+                                            Sun-Maid Raisins wtih almond
+                                            <br />
+                                            and no sugar
+                                        </h3>
+                                        <div class="flex items-center text-gray-500 text-sm mb-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop mr-2" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"
+                                                />
+                                            </svg>
+                                            By Lucky Supermarket
+                                        </div>
+                                        <div class="text-gray-500 text-sm mb-4">Sold: 8/15</div>
+                                        <button class="w-full bg-emerald-100 text-emerald-800 font-medium py-2 px-4 rounded-md transition-colors flex items-center justify-center hover:bg-green-400 hover:scale-110 cursor-pointer">
+                                            Add To Cart
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!--* Card 5 -->
+                                <div
+                                    class="shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[250px] rounded-xl overflow-hidden bg-white shadow-sm border border-gray-100 group product-card"
+                                    data-id="hot-5"
+                                    data-title="Doritos Spicy Sweet Chili and low fat"
+                                    data-price="$28.99"
+                                    data-price-numeric="28.99"
+                                    data-image="assets/hot-deals/product-img1.webp"
+                                >
+                                    <div class="relative h-48 overflow-hidden flex justify-center items-center p-4">
+                                        <img src="assets/hot-deals/product-img1.webp" alt="Doritos Spicy Sweet Chili" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+                                        <!-- Wishlist Icon -->
+                                        <div class="absolute top-2 left-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-emerald-600">
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733C11.285 4.876 9.623 3.75 7.688 3.75 5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <!-- badge -->
+                                        <div class="absolute top-2 right-2 bg-yellow-500 text-white text-xs px-2 py-1 rounded-full">New</div>
+                                    </div>
+                                    <div class="p-4 pt-2">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-gray-400 line-through">$38.99</span>
+                                            <span class="text-lg font-bold text-gray-800">$28.99</span>
+                                            <span class="text-gray-500 text-sm">/Qty</span>
+                                        </div>
+                                        <div class="flex items-center text-yellow-500 text-sm mb-1">
+                                            <div class="text-xl">&starf;</div>
+                                            (11k)
+                                        </div>
+                                        <h3 class="text-md font-bold text-gray-800 mb-2">
+                                            Doritos Spicy Sweet Chili and
+                                            <br />
+                                            low fat
+                                        </h3>
+                                        <div class="flex items-center text-gray-500 text-sm mb-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop mr-2" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"
+                                                />
+                                            </svg>
+                                            By Lucky Supermarket
+                                        </div>
+                                        <div class="text-gray-500 text-sm mb-4">Sold: 20/30</div>
+                                        <button class="w-full bg-emerald-100 hover:bg-emerald-200 text-emerald-800 font-medium py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                                            Add To Cart
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--? DELIVERY DESKTOP -->
+        <section class="py-10 px-4 md:px-8 lg:px-40 hidden lg:block">
+            <div class="max-w-7xl mx-auto">
+                <!-- Wrapper -->
+                <div class="relative rounded-xl overflow-hidden bg-[#299e60] shadow-sm">
+                    <div class="flex flex-row items-center justify-between gap-2 p-2 md:gap-4 md:p-4 lg:gap-6 lg:p-10">
+                        <div class="w-1/4 flex justify-center">
+                            <img src="assets/delivery/delivery-man.webp" class="max-h-24 md:max-h-32 lg:max-h-80 w-auto object-contain" />
+                        </div>
+
+                        <div class="w-1/2 text-center text-white relative">
+                            <h2 class="text-lg md:text-xl lg:text-3xl font-bold mb-1 md:mb-2" style="font-family: 'Merienda', cursive">
+                                We Deliver on Next Day
+                                <br />
+                                from 10:00 AM to 08:00 PM
+                            </h2>
+                            <p class="text-xs md:text-sm lg:text-base mb-2 md:mb-4">For orders starts from $100</p>
+                            <a class="bg-white text-emerald-600 px-3 py-1 md:px-4 md:py-2 lg:px-6 lg:py-2 rounded-xl font-medium transition-colors hover:bg-gray-400 cursor-pointer">Shop Now</a>
+                        </div>
+
+                        <div class="w-1/4 flex justify-center">
+                            <img src="assets/delivery/special-img.webp" class="max-h-24 md:max-h-32 lg:max-h-64 w-auto object-contain" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Todo: DELIVERY MOBILE + TABLET -->
+        <section class="py-6 px-4 lg:hidden">
+            <div class="max-w-4xl mx-auto">
+                <div class="relative rounded-xl overflow-hidden bg-[#299e60] shadow-sm">
+                    <!--* Content -->
+                    <div class="flex items-center justify-between px-3 py-4 gap-2">
+                        <!-- Driver -->
+                        <div class="w-1/4 flex justify-center">
+                            <img src="assets/delivery/delivery-man.webp" class="max-h-16 sm:max-h-20 md:max-h-28 object-contain" />
+                        </div>
+
+                        <!-- Text -->
+                        <div class="w-1/2 text-center text-white">
+                            <h2 class="text-sm sm:text-base md:text-xl font-bold mb-1 leading-tight" style="font-family: 'Merienda', cursive">
+                                We Deliver on Next Day
+                                <br />
+                                from 10:00 AM to 08:00 PM
+                            </h2>
+
+                            <p class="text-[10px] sm:text-xs md:text-sm mb-2">For orders starts from $100</p>
+
+                            <button class="bg-white text-emerald-600 px-3 py-1 rounded-lg text-xs sm:text-sm md:text-base font-medium hover:bg-gray-100 inline-flex items-center gap-1">
+                                Shop Now
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Food -->
+                        <div class="w-1/4 flex justify-center">
+                            <img src="assets/delivery/special-img.webp" class="max-h-16 sm:max-h-20 md:max-h-24 object-contain" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--? NEW ARRIVALS SECTION -->
+        <section class="py-10 px-4 md:px-8 lg:px-40">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6" style="font-family: 'Merienda', cursive">New Arrivals</h2>
+
+                <!-- Wrapper Overflow -->
+                <div id="arrivalsWrapper" class="overflow-hidden relative">
+                    <!-- *Track -->
+                    <div id="arrivalsTrack" class="flex items-start gap-6 whitespace-nowrap">
+                        <!--* Card 1 -->
+                        <div
+                            id="arrival1"
+                            class="product-card shrink-0 w-full sm:w-1/2 lg:w-1/4 rounded-xl overflow-hidden bg-white shadow-sm border border-gray-100"
+                            data-id="arrival-1"
+                            data-title="Taylor Farms Broccoli Florets Vegetables"
+                            data-price="$25.99"
+                            data-price-numeric="25.99"
+                            data-image="assets/arival/product-img1.webp"
+                        >
+                            <div class="relative h-48 overflow-hidden flex justify-center items-center p-4">
+                                <img src="assets/arival/product-img1.webp" alt="Taylor Farms Broccoli Florets Vegetables" class="max-h-full max-w-full object-contain" />
+                                <!-- Wishlist Icon -->
+                                <div class="absolute top-2 left-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-emerald-600">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733C11.285 4.876 9.623 3.75 7.688 3.75 5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                        />
+                                    </svg>
+                                </div>
+                                <!-- Badge -->
+                                <div class="absolute top-2 right-2 bg-yellow-500 text-white text-xs px-2 py-1 rounded-full">New</div>
+                            </div>
+                            <div class="p-4 pt-2">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-gray-400 line-through">$32.99</span>
+                                    <span class="text-lg font-bold text-gray-800">$25.99</span>
+                                    <span class="text-gray-500 text-sm">/Qty</span>
+                                </div>
+                                <h3 class="text-md font-bold text-gray-800 mb-2">
+                                    Taylor Farms Broccoli
+                                    <br />
+                                    Florets Vegetables
+                                </h3>
+                                <div class="flex items-center text-gray-500 text-sm mb-4">
+                                    <img src="assets/icon/shop.svg" alt="Fresh Groceries Delivery" class="pr-2" />
+                                    By Lucky Supermarket
+                                </div>
+                                <button class="w-full hover:bg-green-400 hover:scale-110 cursor-pointer bg-emerald-100 text-emerald-800 font-medium py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                                    Add To Cart
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!--* Card 2 -->
+                        <div
+                            id="arrival2"
+                            class="product-card shrink-0 w-full sm:w-1/2 lg:w-1/4 rounded-xl overflow-hidden bg-white shadow-sm border border-gray-100"
+                            data-id="arrival-2"
+                            data-title="Taylor Farms Broccoli Florets Fruits"
+                            data-price="$22.99"
+                            data-price-numeric="22.99"
+                            data-image="assets/arival/product-img2.webp"
+                        >
+                            <div class="relative h-48 overflow-hidden flex justify-center items-center p-4">
+                                <img src="assets/arival/product-img2.webp" alt="Taylor Farms Broccoli Florets Fruits" class="max-h-full max-w-full object-contain" />
+                                <div class="absolute top-2 left-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-emerald-600">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733C11.285 4.876 9.623 3.75 7.688 3.75 5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">30%</div>
+                            </div>
+                            <div class="p-4 pt-2">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-gray-400 line-through">$30.99</span>
+                                    <span class="text-lg font-bold text-gray-800">$22.99</span>
+                                    <span class="text-gray-500 text-sm">/Qty</span>
+                                </div>
+                                <h3 class="text-md font-bold text-gray-800 mb-2">
+                                    Taylor Farms Broccoli
+                                    <br />
+                                    Florets Vegetables
+                                </h3>
+                                <div class="flex items-center text-gray-500 text-sm mb-4">
+                                    <img src="assets/icon/shop.svg" alt="Fresh Groceries Delivery" class="pr-2" />
+
+                                    By Lucky Supermarket
+                                </div>
+                                <button class="w-full hover:bg-green-400 hover:scale-110 cursor-pointer bg-emerald-100 text-emerald-800 font-medium py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                                    Add To Cart
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!--* Card 3 -->
+                        <div
+                            id="arrival3"
+                            class="product-card shrink-0 w-full sm:w-1/2 lg:w-1/4 rounded-xl overflow-hidden bg-white shadow-sm border border-gray-100"
+                            data-id="arrival-3"
+                            data-title="Taylor Farms Broccoli Florets Fruits"
+                            data-price="$24.99"
+                            data-price-numeric="24.99"
+                            data-image="assets/arival/product-img3.webp"
+                        >
+                            <div class="relative h-48 overflow-hidden flex justify-center items-center p-4">
+                                <img src="assets/arival/product-img3.webp" alt="Taylor Farms Broccoli Florets Fruits" class="max-h-full max-w-full object-contain" />
+                                <div class="absolute top-2 left-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-emerald-600">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733C11.285 4.876 9.623 3.75 7.688 3.75 5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">30%</div>
+                            </div>
+                            <div class="p-4 pt-2">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-gray-400 line-through">$30.99</span>
+                                    <span class="text-lg font-bold text-gray-800">$24.99</span>
+                                    <span class="text-gray-500 text-sm">/Qty</span>
+                                </div>
+                                <h3 class="text-md font-bold text-gray-800 mb-2">
+                                    Taylor Farms Broccoli
+                                    <br />
+                                    Florets Vegetables
+                                </h3>
+                                <div class="flex items-center text-gray-500 text-sm mb-4">
+                                    <img src="assets/icon/shop.svg" alt="Fresh Groceries Delivery" class="pr-2" />
+
+                                    By Lucky Supermarket
+                                </div>
+                                <button class="w-full hover:bg-green-400 hover:scale-110 cursor-pointer bg-emerald-100 text-emerald-800 font-medium py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                                    Add To Cart
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!--* Card 4 -->
+                        <div
+                            id="arrival4"
+                            class="product-card shrink-0 w-full sm:w-1/2 lg:w-1/4 rounded-xl overflow-hidden bg-white shadow-sm border border-gray-100"
+                            data-id="arrival-4"
+                            data-title="Taylor Farms Broccoli Florets Fruits"
+                            data-price="$21.99"
+                            data-price-numeric="21.99"
+                            data-image="assets/arival/product-img4.webp"
+                        >
+                            <div class="relative h-48 overflow-hidden flex justify-center items-center p-4">
+                                <img src="assets/arival/product-img4.webp" alt="Taylor Farms Broccoli Florets Fruits" class="max-h-full max-w-full object-contain" />
+                                <div class="absolute top-2 left-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-emerald-600">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733C11.285 4.876 9.623 3.75 7.688 3.75 5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">30%</div>
+                            </div>
+                            <div class="p-4 pt-2">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-gray-400 line-through">$30.99</span>
+                                    <span class="text-lg font-bold text-gray-800">$21.99</span>
+                                    <span class="text-gray-500 text-sm">/Qty</span>
+                                </div>
+                                <h3 class="text-md font-bold text-gray-800 mb-2">
+                                    Taylor Farms Broccoli
+                                    <br />
+                                    Florets Vegetables
+                                </h3>
+                                <div class="flex items-center text-gray-500 text-sm mb-4">
+                                    <img src="assets/icon/shop.svg" alt="Fresh Groceries Delivery" class="pr-2" />
+
+                                    By Lucky Supermarket
+                                </div>
+                                <button class="w-full hover:bg-green-400 hover:scale-110 cursor-pointer bg-emerald-100 text-emerald-800 font-medium py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                                    Add To Cart
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!--* Card 5 -->
+                        <div
+                            id="arrival5"
+                            class="product-card shrink-0 w-full sm:w-1/2 lg:w-1/4 rounded-xl overflow-hidden bg-white shadow-sm border border-gray-100"
+                            data-id="arrival-5"
+                            data-title="Taylor Farms Broccoli Florets Fruits"
+                            data-price="$21.74"
+                            data-price-numeric="21.74"
+                            data-image="assets/arival/product-img5.webp"
+                        >
+                            <div class="relative h-48 overflow-hidden flex justify-center items-center p-4">
+                                <img src="assets/arival/product-img5.webp" alt="Taylor Farms Broccoli Florets Fruits" class="max-h-full max-w-full object-contain" />
+                                <div class="absolute top-2 left-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-emerald-600">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733C11.285 4.876 9.623 3.75 7.688 3.75 5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">25%</div>
+                            </div>
+                            <div class="p-4 pt-2">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-gray-400 line-through">$28.99</span>
+                                    <span class="text-lg font-bold text-gray-800">$21.74</span>
+                                    <span class="text-gray-500 text-sm">/Qty</span>
+                                </div>
+                                <h3 class="text-md font-bold text-gray-800 mb-2">
+                                    Taylor Farms Broccoli
+                                    <br />
+                                    Florets Vegetables
+                                </h3>
+                                <div class="flex items-center text-gray-500 text-sm mb-4">
+                                    <img src="assets/icon/shop.svg" alt="Fresh Groceries Delivery" class="pr-2" />
+
+                                    By Lucky Supermarket
+                                </div>
+                                <button class="w-full hover:bg-green-400 hover:scale-110 cursor-pointer bg-emerald-100 text-emerald-800 font-medium py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                                    Add To Cart
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!--* Card 6 -->
+                        <div
+                            id="arrival6"
+                            class="product-card shrink-0 w-full sm:w-1/2 lg:w-1/4 rounded-xl overflow-hidden bg-white shadow-sm border border-gray-100"
+                            data-id="arrival-6"
+                            data-title="Taylor Farms Broccoli Florets Vegetables"
+                            data-price="$21.59"
+                            data-price-numeric="21.59"
+                            data-image="assets/arival/product-img6.webp"
+                        >
+                            <div class="relative h-48 overflow-hidden flex justify-center items-center p-4">
+                                <img src="assets/arival/product-img6.webp" alt="Taylor Farms Broccoli Florets Vegetables" class="max-h-full max-w-full object-contain" />
+                                <div class="absolute top-2 left-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-emerald-600">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733C11.285 4.876 9.623 3.75 7.688 3.75 5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">40%</div>
+                            </div>
+                            <div class="p-4 pt-2">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-gray-400 line-through">$35.99</span>
+                                    <span class="text-lg font-bold text-gray-800">$21.59</span>
+                                    <span class="text-gray-500 text-sm">/Qty</span>
+                                </div>
+                                <h3 class="text-md font-bold text-gray-800 mb-2">
+                                    Taylor Farms Broccoli
+                                    <br />
+                                    Florets Vegetables
+                                </h3>
+                                <div class="flex items-center text-gray-500 text-sm mb-4">
+                                    <img src="assets/icon/shop.svg" alt="Fresh Groceries Delivery" class="pr-2" />
+
+                                    By Lucky Supermarket
+                                </div>
+                                <button class="w-full hover:bg-green-400 hover:scale-110 cursor-pointer bg-emerald-100 text-emerald-800 font-medium py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                                    Add To Cart
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h11.37a1.125 1.125 0 001.087-.835l2.006-7.52a.563.563 0 00-.087-.465.56.56 0 00-.45-.23H4.106m3.394 9.05L5.25 6.75M7.5 14.25l-2.25 4.5m0 0h12m-12 0a1.125 1.125 0 11-2.25 0m14.25 0a1.125 1.125 0 11-2.25 0"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--? hero-end section-->
+        <section class="py-10 px-4 md:px-8 lg:px-40">
+            <div class="max-w-7xl mx-auto">
+                <!-- Wrapper -->
+                <div class="relative rounded-xl overflow-hidden bg-[#121535] shadow-sm">
+                    <!-- Background Pattern -->
+                    <div class="absolute inset-0 bg-[url('assets/hero/bg-end.png')] bg-cover bg-center opacity-20"></div>
+                    <!-- Content -->
+                    <div class="relative z-10 flex flex-col lg:flex-row items-center gap-6 p-6 lg:p-10">
+                        <!-- Left: Text -->
+                        <div class="lg:w-1/2 text-white">
+                            <h2 class="text-3xl md:text-6xl font-bold mb-4" style="font-family: 'sans-serif'">
+                                Don't Miss
+                                <br />
+                                Out on Grocery Deals
+                            </h2>
+                            <p class="text-lg md:text-xl mb-6">SIGN UP FOR THE UPDATE NEWSLETTER</p>
+
+                            <form class="flex flex-col sm:flex-row gap-2">
+                                <input type="email" placeholder="Your Email address..." class="flex-1 border border-gray-300 rounded-lg py-2 px-4 focus:outline-none" />
+                                <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors">Subscribe</button>
+                            </form>
+                        </div>
+
+                        <!-- Right: Basket Image -->
+                        <div class="lg:w-1/2 flex justify-center">
+                            <img src="assets/hero/hero-end.webp" alt="Grocery Basket" class="max-h-64 lg:max-h-80 w-auto object-contain relative z-10" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER SECTION -->
+        <footer class="bg-[#f0f9f4] pt-14 pb-6 px-4 md:px-8 lg:px-40 relative overflow-hidden">
+            <!-- Content Wrapper -->
+            <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-10">
+                <!--* Column 1: Brand Info -->
+                <div>
+                    <h2 class="text-[22px] font-bold" style="font-family: 'Merienda', cursive">
+                        My
+                        <span class="text-emerald-600">Market</span>
+                    </h2>
+
+                    <p class="text-gray-700 mt-3 text-sm leading-relaxed">We’re Grocery Shop, an innovative team of food suppliers.</p>
+
+                    <div class="mt-6 space-y-3 text-[12px]">
+                        <!-- Address -->
+                        <div class="flex gap-3">
+                            <div class="bg-emerald-100 text-emerald-600 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                                </svg>
+                            </div>
+                            <p class="text-gray-800">789 Inner Lane, Biyes Park, California</p>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex gap-3">
+                            <div class="bg-emerald-100 text-emerald-600 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="text-gray-800">+00 123 456 789 or +00 987 654 012</p>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex gap-3">
+                            <div class="bg-emerald-100 text-emerald-600 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="text-gray-800 pt-2">Example@site.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--* Column 2: Information -->
+                <div>
+                    <h3 class="font-bold text-xl mb-4">Information</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Become a Vendor</a></li>
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Affiliate Program</a></li>
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Our Suppliers</a></li>
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Extended Plan</a></li>
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Community</a></li>
+                    </ul>
+                </div>
+
+                <!--* Column 3: Support -->
+                <div>
+                    <h3 class="font-bold text-xl mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Help Center</a></li>
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Report Abuse</a></li>
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Submit and Dispute</a></li>
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Policies & Rules</a></li>
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Online Shopping</a></li>
+                    </ul>
+                </div>
+
+                <!--* Column 4: Account -->
+                <div>
+                    <h3 class="font-bold text-xl mb-4">Account</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">My Account</a></li>
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Order History</a></li>
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Shopping Cart</a></li>
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Compare</a></li>
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Help Ticket</a></li>
+                        <li><a href="#" class="hover:text-emerald-600 hover:underline cursor-pointer">Wishlist</a></li>
+                    </ul>
+                </div>
+
+                <!--* Column 5: Shop On The Go -->
+                <div>
+                    <h3 class="font-bold text-xl mb-4">Shop on The Go</h3>
+
+                    <p class="text-gray-700 mb-4">SnackBasket App is available. Get it now</p>
+
+                    <div class="flex gap-3 mb-6">
+                        <img src="assets/footer/apps.png" class="h-10 object-contain" />
+                        <img src="assets/footer/gplay.png" class="h-10 object-contain" />
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="flex gap-3">
+                        <a class="w-8 h-8 flex justify-center items-center rounded-full bg-black text-white hover:bg-gray-800 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+                                />
+                            </svg>
+                        </a>
+                        <a class="w-8 h-8 flex justify-center items-center rounded-full bg-black text-white hover:bg-gray-800 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                            </svg>
+                        </a>
+                        <a class="w-8 h-8 flex justify-center items-center rounded-full bg-black text-white hover:bg-gray-800 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                                />
+                            </svg>
+                        </a>
+                        <a class="w-8 h-8 flex justify-center items-center rounded-full bg-black text-white hover:bg-gray-800 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                                />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-300 mt-10 pt-6 flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10">
+                <p class="text-gray-700 text-center lg:text-left">
+                    ©2025. All Rights Reserved By
+                    <span class="font-bold text-gray-900">Uicode</span>
+                </p>
+
+                <img src="assets/footer/payment.png" class="h-7 object-contain" />
+            </div>
+        </footer>
+    </body>
+</html>
